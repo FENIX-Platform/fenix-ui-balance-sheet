@@ -1,0 +1,35 @@
+{
+    "name": "fenix-ui-balance-sheet",
+    "version": "0.0.1",
+    "description": "FENIX Balance Sheet tool",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/FENIX-Platform/fenix-ui-analysis.git"
+    },
+    "keywords": [
+        "FENIX",
+        "balanceSheet",
+        "balance",
+        "balance-sheet"
+
+    ],
+    "author": "FENIX Development Team",
+    "license": "GPL3",
+    "bugs": {
+        "url": "https://github.com/FENIX-Platform/fenix-ui-balance-sheet/issues"
+    },
+    "homepage": "https://github.com/FENIX-Platform/fenix-ui-balance-sheet",
+    "dependencies": {
+        "jquery": "~2.1.0",
+        "nprogress": "~0.1.6",
+        "bootstrap": "~3.3.2",
+        "requirejs": "~2.1.15",
+        "domReady": "https://github.com/requirejs/domReady/tarball/master",
+        "text": "https://github.com/requirejs/text/tarball/master",
+        "i18n": "https://github.com/requirejs/i18n/tarball/master"
+    }
+}
