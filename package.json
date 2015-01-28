@@ -28,8 +28,10 @@
         "nprogress": "~0.1.6",
         "bootstrap": "~3.3.2",
         "requirejs": "~2.1.15",
+        "numeral": "~1.5.2",
         "domReady": "https://github.com/requirejs/domReady/tarball/master",
         "text": "https://github.com/requirejs/text/tarball/master",
-        "i18n": "https://github.com/requirejs/i18n/tarball/master"
+        "i18n": "https://github.com/requirejs/i18n/tarball/master",
+        "moment":"https://github.com/moment/moment/tarball/master"
     }
 }
