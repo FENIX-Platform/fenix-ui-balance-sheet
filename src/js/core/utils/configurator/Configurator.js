@@ -41,7 +41,6 @@ define(['jquery', 'amplify'], function ($) {
         */
 
 
-        debugger;
         this.createKeyMatrixes();
     }
 

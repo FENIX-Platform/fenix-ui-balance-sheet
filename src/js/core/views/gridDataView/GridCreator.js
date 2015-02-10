@@ -1,6 +1,7 @@
 define([
         'jquery',
-        'nprogress'
+        'nprogress',
+        'webix'
     ],
     function ($,NProgress) {
 
@@ -12,28 +13,30 @@ define([
 
         function GridCreator() {
             nProgress = NProgress
-            nProgress.done()
+            nProgress.done();
         }
 
 
-        GridCreator.prototype.init = function (configurator,filterDataConf,ControllerViews) {
+        GridCreator.prototype.init = function (configurator,filterDataConf,ControllerViews, AdapterGrid) {
 
 
-            supportUtility = utility
-            adapterGrid = new AdapterGrid;
-            viewModel = new ViewModel;
-            table = tableModel;
+
+            debugger;
+            adapterGrid =  AdapterGrid;
+          //  viewModel = new ViewModel;
+         //   table = tableModel;
             Configurator = configurator;
-            language = Configurator.getComponentLanguage();
-            var grid = this.createFullGrid();
-            return grid;
+         //   language = Configurator.getComponentLanguage();
+           // var grid = this.createFullGrid();
+           // return grid;
         }
 
         GridCreator.prototype.createAndDrawGrid = function (columns, dataSource) {
             var self = this;
-            var gridUi =
+            debugger;
+         /*   var gridUi =
                 webix.ui({
-                    container: "pivotGrid",
+                    container: "fx-bsheet_grid",
                     view: "datatable",
                     rowHeight: 29,
                     columnWidth: 300,
@@ -42,6 +45,7 @@ define([
                     editable: true,
                     navigation: true,
                     leftSplit: 1,
+
                     scheme: {
                         $change: function (item) {
                             self.createColourConfiguration(item);
@@ -53,9 +57,21 @@ define([
                     data: dataSource
                 });
 
+
+            debugger;
             webix.event(window, "resize", function () {
                 gridUi.adjust();
-            })
+            })*/
+
+            var gridUi =
+                webix.ui({
+                    container: "fx-bsheet_grid",
+                    view: "datatable",
+                    columns: columns,
+                    datatype: "jsarray",
+                    data: dataSource
+                });
+
 
             return gridUi
         }
@@ -108,13 +124,13 @@ define([
 
             columns = this.createColumns(dataSource, differentDates)
 
-            this.createOtherOptions()
+           // this.createOtherOptions()
 
             if (grid)
                 grid.destructor()
 
             grid = this.createAndDrawGrid(columns, dataSource);
-            generalController.createListeners(grid);
+      //      generalController.createListeners(grid);
             return grid;
         }
 

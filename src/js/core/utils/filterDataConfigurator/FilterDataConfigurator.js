@@ -1,4 +1,4 @@
-define([], function(){
+define(['jquery'], function($){
 
     'use strict'
 
@@ -12,6 +12,7 @@ define([], function(){
 
 
     FilterDataConfigurator.prototype.getFilterData = function(){
+        debugger;
         return $.extend(true,{},filterData);
     }
 

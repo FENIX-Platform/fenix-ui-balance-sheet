@@ -22,10 +22,8 @@ define([
         generalController = BSheetController;
         configurator = Configurator;
         filterDataConf = FilterDataConf;
-        visualizationModel.init(tableData,configurator,filterDataConf);
-
-
-
+        gridCreator.init(configurator,filterDataConf,this, adapterGrid)
+        gridCreator.renderGrid(visualizationModel.init(tableData,configurator,filterDataConf));
 
     }
 
