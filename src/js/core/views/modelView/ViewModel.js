@@ -1,4 +1,7 @@
-define(["jquery", "fx-ui-balance-sheet/formatter/DatatypesFormatter"], function ($, Formatter) {
+define([
+    'jquery',
+    'fx-bsheet/dataTypesFormatter'
+    ], function ($, Formatter) {
 
     'use strict'
 

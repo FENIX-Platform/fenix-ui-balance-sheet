@@ -1,21 +1,24 @@
-define(["jquery" , "views/modelView/ViewModel", "adapterGrid", "nprogress", "webix", "amplify"],
-    function ($, ViewModel, AdapterGrid, Nprogress) {
+define([
+        'jquery',
+        'nprogress'
+    ],
+    function ($,NProgress) {
 
         'use strict'
 
         var table, Configurator, accessorMap, fullModel, configurationKeys, indexValues, modelView,
             valueColumn, language, viewModel, adapterGrid, supportUtility,
-            dataSource, columns , arrDiffDates, grid, generalController, NProgress, particularFormatterCodes
+            dataSource, columns , arrDiffDates, grid, generalController, nProgress, particularFormatterCodes
 
         function GridCreator() {
-            NProgress = Nprogress
-            NProgress.done()
+            nProgress = NProgress
+            nProgress.done()
         }
 
 
-        GridCreator.prototype.init = function (tableModel, configurator, utility, GeneralController) {
+        GridCreator.prototype.init = function (configurator,filterDataConf,ControllerViews) {
 
-            generalController = GeneralController;
+
             supportUtility = utility
             adapterGrid = new AdapterGrid;
             viewModel = new ViewModel;

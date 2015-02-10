@@ -5,7 +5,29 @@ define(function () {
 
         paths: {
 
-            'fx-balance-sheet/start'                       :  "./start",
+            'fx-bsheet/start'                       :  "./start",
+            'fx-bsheet/configurator'                :  "./core/utils/configurator/Configurator",
+            'fx-bsheet/filterDataConf'              :  "./core/utils/filterDataConfigurator/FilterDataConfigurator",
+            'fx-bsheet/modelsController'            :  "./core/models/controller/ModelsController",
+            'fx-bsheet/tableDataModel'              :  "./core/models/tableDataModel/TableDataModel",
+            'fx-bsheet/d3sAdapter'                  :  "./core/models/adapters/D3SModelsAdapter",
+            'fx-bsheet/gridDataModel'               :  "./core/models/gridDataModel/GridDataModel",
+            'fx-bsheet/generalController'           :  "./core/controller/BalanceSheetController",
+            'fx-bsheet/viewControllers'             :  "./core/views/controller/ControllerViews",
+            'fx-bsheet/adapterGrid'                 :  "./core/views/adapter/webix/AdapterGrid",
+            'fx-bsheet/visualizationModel'          :  "./core/views/modelView/ViewModel" ,
+            'fx-bsheet/gridCreator'                 :  "./core/views/gridDataView/GridCreator",
+            'fx-bsheet/dataTypesFormatter'          :  "./core/utils/formatter/DataTypeFormatter",
+
+
+
+
+            /*   --------------------------  TO DELETE  --------------------------------------- */
+            'fx-bsheet/testFolder'                  :  "../../tests/balanceSheet/v1/",
+            /*   ------------------------------------------------------------------------------ */
+
+
+
             /*
             'fx-balance-sheet/utilities'         :  "./balance-sheet/core/balanceSheet/configuration/utilities",
             'fx-balance-sheet/balanceSheet'      :  "./balance-sheet/core/balanceSheet",
@@ -27,34 +49,23 @@ define(function () {
 
 
             //Third party libs
-            'bootstrap': '{FENIX_CDN}/js/bootstrap/3.2/js/bootstrap.min',
-            'jquery': '{FENIX_CDN}/js/jquery/2.1.1/jquery.min',
-            'jqwidgets': '{FENIX_CDN}/js/jqwidgets/3.1/jqx-light',
-            'text': '{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text',
-            'webix':'{FENIX_CDN}/js/webix/2.2.1/js/webix',
-            'select2':'{FENIX_CDN}/select2/3.5.2js/select2.min',
-            'jquery.mb.flipText': '{FENIX_CDN}/js/jquery.mb.extruder/2.5.5/inc/jquery.mb.flipText',
-            'jquery.hoverIntent': '{FENIX_CDN}/js/jquery.hoverIntent/1.0/jquery.hoverIntent',
-            'amplify' : '{FENIX_CDN}/js/amplify/1.1.2/amplify.min'
+            'bootstrap' : '{FENIX_CDN}/js/bootstrap/3.2/js/bootstrap.min',
+            'jquery'    : '{FENIX_CDN}/js/jquery/2.1.1/jquery.min',
+            'moment'    : '{FENIX_CDN}/js/moment/2.9.0/moment.min',
+            'numeral'   : '{FENIX_CDN}/js/numeral/1.5.3/min/numeral.min',
+            'jqwidgets' : '{FENIX_CDN}/js/jqwidgets/3.1/jqx-light',
+            'text'      : '{FENIX_CDN}/js/requirejs/plugins/text/2.0.12/text',
+            'webix'     : '{FENIX_CDN}/js/webix/2.2.1/js/webix',
+            'nprogress' : '{FENIX_CDN}/js/nprogress/0.1.6/nprogress',
+            'select2'   : '{FENIX_CDN}/select2/3.5.2js/select2.min',
+            'amplify'   : '{FENIX_CDN}/js/amplify/1.1.2/amplify.min'
         },
         shim: {
-            'highcharts': {
-                deps: ['jquery']
-            },
             'jqwidgets': {
                 deps: ['jquery']
             },
             'bootstrap': {
                 deps: ['jquery']
-            },
-            'jquery.mb.flipText': {
-                deps: ['jquery']
-            },
-            'jquery.hoverIntent': {
-                deps: ['jquery']
-            },
-            'mbExtruder': {
-                deps: ['jquery', 'jquery.mb.flipText', 'jquery.hoverIntent']
             },
             'amplify' : {
                 deps : ['jquery']

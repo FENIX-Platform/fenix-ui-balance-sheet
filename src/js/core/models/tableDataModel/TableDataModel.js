@@ -1,12 +1,11 @@
-define(["jquery", "formulasAmis/support/SupportModel" ], function ($, SupportModel) {
-
+define([ ], function () {
 
     'use strict'
 
 
     var instanceData, Configurator, instanceFullTableData, counterEmptySpaces,
         fullRows, fullColumns, indexesDoubleColumnLeft, originalData, leftIndexes, upIndexes,
-        visualizedData, newData, updatedData, supportModel;
+        visualizedData, newData, updatedData ;//, supportModel;
 
     // -------------------- SET OPERATIONS --------------------------------------
 
@@ -35,8 +34,10 @@ define(["jquery", "formulasAmis/support/SupportModel" ], function ($, SupportMod
         instanceData = data;
         originalData = $.extend(true, [], data)
         Configurator = configurator;
+        /*
         supportModel = new SupportModel;
         supportModel.init(Configurator)
+        */
     }
 
 
@@ -300,6 +301,8 @@ define(["jquery", "formulasAmis/support/SupportModel" ], function ($, SupportMod
         return result;
     }
 
+
+    // This is strict coupled to amis cbs
     TableDataModel.prototype.addNewForecast= function(dataArray){
         var mapCodes =supportModel.getMapCodes()
         var data = this.getTableData();
@@ -389,6 +392,8 @@ define(["jquery", "formulasAmis/support/SupportModel" ], function ($, SupportMod
     }
 
 
+
+    // This is tightly coupled with amis cbs
     TableDataModel.prototype.updateDataFromSpecialForm = function(dataFromForm, formChosen){
         var dateInvolved = dataFromForm[0][2];
         var indexes;

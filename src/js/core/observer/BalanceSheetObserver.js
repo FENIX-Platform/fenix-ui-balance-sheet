@@ -18,11 +18,11 @@ define(['jquery', 'jqwidgets', 'amplify'], function($){
 
 
     BalanceSheetObserver.prototype.listenToResetButton = function(){
-        $('#resetGrid').on('click', function(e){
+        $('#fx-bsheet_resetGrid').on('click', function(e){
             e.preventDefault();
             e.stopImmediatePropagation();
             debugger;
-            $('#loadData').click();
+            $('#fx-bsheet_loadData').click();
 
         })
     }
@@ -31,26 +31,26 @@ define(['jquery', 'jqwidgets', 'amplify'], function($){
     BalanceSheetObserver.prototype.listenToElementsOptions = function(check) {
 
         this.updateCheckingBox('elements',check)
-        $('#everyElButtons').on('checked', function (event) {
+        $('#fx-bsheet_everyElButtons').on('checked', function (event) {
             event.preventDefault();
             event.stopImmediatePropagation()
             generalController.onChangeVisualizationOption('elements',1)
 
         });
 
-        $('#flagButton').on('checked', function (event) {
+        $('#fx-bsheet_flagButton').on('checked', function (event) {
             event.preventDefault();
             event.stopImmediatePropagation()
             generalController.onChangeVisualizationOption('elements',2)
         });
 
-        $('#noteButton').on('checked', function (event) {
+        $('#fx-bsheet_noteButton').on('checked', function (event) {
             event.preventDefault();
             event.stopImmediatePropagation()
             generalController.onChangeVisualizationOption('elements',3)
         });
 
-        $('#valueButton').on('checked', function (event) {
+        $('#fx-bsheet_valueButton').on('checked', function (event) {
             event.preventDefault();
             event.stopImmediatePropagation()
             generalController.onChangeVisualizationOption('elements',4)
@@ -61,21 +61,21 @@ define(['jquery', 'jqwidgets', 'amplify'], function($){
     BalanceSheetObserver.prototype.listenToVisualizationOptions = function(check) {
 
         this.updateCheckingBox('separator',check)
-        $('#commaButton').on('checked', function (event) {
+        $('#fx-bsheet_commaButton').on('checked', function (event) {
             event.preventDefault();
             event.stopImmediatePropagation()
             generalController.onChangeVisualizationOption('separator',1)
 
         });
 
-        $('#periodButton').on('checked', function (event) {
+        $('#fx-bsheet_periodButton').on('checked', function (event) {
             event.preventDefault();
             event.stopImmediatePropagation()
             generalController.onChangeVisualizationOption('separator',2)
 
         });
 
-        $('#spaceButton').on('checked', function (event) {
+        $('#fx-bsheet_spaceButton').on('checked', function (event) {
             event.preventDefault();
             event.stopImmediatePropagation()
             generalController.onChangeVisualizationOption('separator',3)
@@ -85,7 +85,7 @@ define(['jquery', 'jqwidgets', 'amplify'], function($){
 
 
     BalanceSheetObserver.prototype.onChangingLoadingModality = function(filterData){
-        $('#changeModality').on('click', function(e){
+        $('#fx-bsheet_changeModality').on('click', function(e){
 
             e.preventDefault();
             e.stopImmediatePropagation();
@@ -105,21 +105,21 @@ define(['jquery', 'jqwidgets', 'amplify'], function($){
 
             switch (check) {
                 case 1:
-                    $('#commaButton').jqxRadioButton('check', function (event) {
+                    $('#fx-bsheet_commaButton').jqxRadioButton('check', function (event) {
                         event.preventDefault();
                         event.stopImmediatePropagation()
                     });
                     break;
 
                 case 2:
-                    $('#periodButton').jqxRadioButton('check', function (event) {
+                    $('#fx-bsheet_periodButton').jqxRadioButton('check', function (event) {
                         event.preventDefault();
                         event.stopImmediatePropagation()
                     });
                     break;
 
                 case 3:
-                    $('#spaceButton').jqxRadioButton('check', function (event) {
+                    $('#fx-bsheet_spaceButton').jqxRadioButton('check', function (event) {
                         event.preventDefault();
                         event.stopImmediatePropagation()
                     });
@@ -129,28 +129,28 @@ define(['jquery', 'jqwidgets', 'amplify'], function($){
 
             switch (check) {
                 case 1:
-                    $('#everyElButtons').jqxRadioButton('check', function (event) {
+                    $('#fx-bsheet_everyElButtons').jqxRadioButton('check', function (event) {
                         event.preventDefault();
                         event.stopImmediatePropagation()
                     });
                     break;
 
                 case 2:
-                    $('#flagButton').jqxRadioButton('check', function (event) {
+                    $('#fx-bsheet_flagButton').jqxRadioButton('check', function (event) {
                         event.preventDefault();
                         event.stopImmediatePropagation()
                     });
                     break;
 
                 case 3:
-                    $('#noteButton').jqxRadioButton('check', function (event) {
+                    $('#fx-bsheet_noteButton').jqxRadioButton('check', function (event) {
                         event.preventDefault();
                         event.stopImmediatePropagation()
                     });
                     break;
 
                 case 4:
-                    $('#valueButton').jqxRadioButton('check', function (event) {
+                    $('#fx-bsheet_valueButton').jqxRadioButton('check', function (event) {
                         event.preventDefault();
                         event.stopImmediatePropagation()
                     });

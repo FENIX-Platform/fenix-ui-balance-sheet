@@ -1,5 +1,8 @@
-define(["jquery", "models/tableDataModel/TableDataModel",
-    "models/gridDataModel/GridDataModel", "models/creator/HandlerCreationModels", "moment"], function ($, TableDataModel, GridDataModel, ModelCreator) {
+define(["jquery",
+    'fx-bsheet/tableDataModel',
+    'fx-bsheet/gridDataModel',
+    'fx-bsheet/d3sAdapter',
+    'moment'], function ($, TableDataModel, GridDataModel, ModelCreator) {
 
 
     'use strict'
@@ -93,6 +96,8 @@ define(["jquery", "models/tableDataModel/TableDataModel",
         return TableModel.getDataToSave()
     }
 
+
+    // This method is strict coupled to amis cbs
     ModelsController.prototype.createNewForecast = function(){
         var muArray = ["Thousand tonnes", "Thousand tonnes","Thousand tonnes","Thousand tonnes","Thousand tonnes",
             "Thousand tonnes","Thousand tonnes","Thousand tonnes","Thousand tonnes","Thousand tonnes",
@@ -130,6 +135,7 @@ define(["jquery", "models/tableDataModel/TableDataModel",
         return d;
     }
 
+    // This method is strict coupled to amis cbs
     ModelsController.prototype.checkBeforeCreateNewForecast = function(model, date){
         var notFound = true;
         for(var i = 0, length = model.length; i<length && notFound; i++){

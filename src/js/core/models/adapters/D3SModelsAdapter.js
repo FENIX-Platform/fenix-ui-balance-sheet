@@ -1,5 +1,4 @@
-define(["jquery"], function ($) {
-
+define([], function () {
 
     'use strict'
 
@@ -18,18 +17,16 @@ define(["jquery"], function ($) {
         mapCodesIndex;
 
 
-    function HandlerCreationModels() {
+    function D3SModelsAdapter() {
     }
 
-    HandlerCreationModels.prototype.init = function (Configurator) {
+    D3SModelsAdapter.prototype.init = function (Configurator) {
         configuratorDsd = Configurator;
         mapCodesIndex = [];
-        var model = this.createKeyMatrixes()
-        return model;
-
+        return this.createKeyMatrixes()
     }
 
-    HandlerCreationModels.prototype.createKeyMatrixes = function () {
+    D3SModelsAdapter.prototype.createKeyMatrixes = function () {
         leftKeyColumns = configuratorDsd.getDSDtoConfigurationKeyColumns().leftColumns
         leftKeyIndexes = configuratorDsd.getLeftKeyColumn()["leftKeyIndexes"]
         upKeyColumns = configuratorDsd.getDSDtoConfigurationKeyColumns().upColumns
@@ -53,7 +50,7 @@ define(["jquery"], function ($) {
         return model;
     }
 
-    HandlerCreationModels.prototype.chooseAndCreateByDataRepresentationType = function (versus) {
+    D3SModelsAdapter.prototype.chooseAndCreateByDataRepresentationType = function (versus) {
 
         var matrix, dataRepresentation, keyColumns;
 
@@ -67,7 +64,7 @@ define(["jquery"], function ($) {
             keyColumns = upKeyColumns;
         }
         else {
-            alert("Error on HandlerCreationModels.chooseAndCreateByDataRepresentationType: " +
+            alert("Error on D3SModelsAdapter.chooseAndCreateByDataRepresentationType: " +
                 "versus value is bad specified or not specified ");
             throw Error;
         }
@@ -86,7 +83,7 @@ define(["jquery"], function ($) {
                         matrix = this.createMatrixDistinctToHybrid(versus, keyColumns[0], keyColumns[1]);
                     }
                     else {
-                        alert("Error on HandlerCreationModels.chooseAndCreateByDataRepresentationType: error " +
+                        alert("Error on D3SModelsAdapter.chooseAndCreateByDataRepresentationType: error " +
                             "on component configuration with the field dataRepresentation");
                         throw Error;
                     }
@@ -103,7 +100,7 @@ define(["jquery"], function ($) {
                         matrix = this.createMatrixDomainToHybrid(versus, keyColumns[0], keyColumns[1]);
                     }
                     else {
-                        alert("Error on HandlerCreationModels.chooseAndCreateByDataRepresentationType: error" +
+                        alert("Error on D3SModelsAdapter.chooseAndCreateByDataRepresentationType: error" +
                             " on component configuration with the field dataRepresentation");
                         throw Error;
                     }
@@ -120,7 +117,7 @@ define(["jquery"], function ($) {
                         matrix = this.createMatrixHybridToHybrid(versus, leftKeyColumns[0], leftKeyColumns[1]);
                     }
                     else {
-                        alert("Error on HandlerCreationModels.chooseAndCreateByDataRepresentationType: error " +
+                        alert("Error on D3SModelsAdapter.chooseAndCreateByDataRepresentationType: error " +
                             "on component configuration with the field dataRepresentation");
                         throw Error;
                     }
@@ -144,7 +141,7 @@ define(["jquery"], function ($) {
     }
 
     /*The data representation of the master column is "domain"  */
-    HandlerCreationModels.prototype.createMatrixDomainToDomain = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixDomainToDomain = function (versus, masterColumn, slaveColumn) {
 
         var matrix = [
             [ ]
@@ -184,7 +181,7 @@ define(["jquery"], function ($) {
 
     }
 
-    HandlerCreationModels.prototype.createMatrixDomainToDistinct = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixDomainToDistinct = function (versus, masterColumn, slaveColumn) {
 
         if (typeof slaveColumn !== 'undefined') {
             return this.createMatrixDomainToDomain(versus, masterColumn, slaveColumn)
@@ -212,7 +209,7 @@ define(["jquery"], function ($) {
         }
     }
 
-    HandlerCreationModels.prototype.createMatrixDomainToHybrid = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixDomainToHybrid = function (versus, masterColumn, slaveColumn) {
 
         if (typeof slaveColumn !== 'undefined') {
             return this.createMatrixDomainToDomain(versus, masterColumn, slaveColumn)
@@ -225,7 +222,7 @@ define(["jquery"], function ($) {
     }
 
     /*The data representation of the master column is "distinct"  */
-    HandlerCreationModels.prototype.createMatrixDistinctToDomain = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixDistinctToDomain = function (versus, masterColumn, slaveColumn) {
         if (typeof slaveColumn !== 'undefined') {
             return this.createMatrixDomainToDomain(versus, masterColumn, slaveColumn)
         }
@@ -252,7 +249,7 @@ define(["jquery"], function ($) {
         }
     }
 
-    HandlerCreationModels.prototype.createMatrixDistinctToDistinct = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixDistinctToDistinct = function (versus, masterColumn, slaveColumn) {
 
         var matrix = [
             [ ]
@@ -291,7 +288,7 @@ define(["jquery"], function ($) {
         return matrix
     };
 
-    HandlerCreationModels.prototype.createMatrixDistinctToHybrid = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixDistinctToHybrid = function (versus, masterColumn, slaveColumn) {
 
         if (slaveColumn.values.length == 0 || typeof slaveColumn.values === 'undefined') {
             return this.createMatrixDistinctToDomain(versus, masterColumn, slaveColumn)
@@ -301,7 +298,7 @@ define(["jquery"], function ($) {
     };
 
     /*The data representation of the master column is "hybrid"  */
-    HandlerCreationModels.prototype.createMatrixHybridToDomain = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixHybridToDomain = function (versus, masterColumn, slaveColumn) {
         if (masterColumn.values.length == 0 || typeof masterColumn.values === 'undefined') {
             return this.createMatrixDomainToDomain(versus, masterColumn, slaveColumn)
         } else {
@@ -310,7 +307,7 @@ define(["jquery"], function ($) {
 
     }
 
-    HandlerCreationModels.prototype.createMatrixHybridToDistinct = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixHybridToDistinct = function (versus, masterColumn, slaveColumn) {
 
         if (masterColumn.values.length == 0 || typeof masterColumn.values === 'undefined') {
             return this.createMatrixDomainToDistinct(versus, masterColumn, slaveColumn)
@@ -320,7 +317,7 @@ define(["jquery"], function ($) {
 
     }
 
-    HandlerCreationModels.prototype.createMatrixHybridToHybrid = function (versus, masterColumn, slaveColumn) {
+    D3SModelsAdapter.prototype.createMatrixHybridToHybrid = function (versus, masterColumn, slaveColumn) {
 
 
         if (masterColumn.values.length == 0 || typeof masterColumn.values === 'undefined') {
@@ -343,7 +340,7 @@ define(["jquery"], function ($) {
     /*
      This method choose the correct domain and creates the array
      */
-    HandlerCreationModels.prototype.createArrayByDomain = function (column) {
+    D3SModelsAdapter.prototype.createArrayByDomain = function (column) {
 
         Date.prototype.dateFormat = function () {
             var yyyy = this.getFullYear();
@@ -499,7 +496,7 @@ define(["jquery"], function ($) {
         return array;
     }
 
-    HandlerCreationModels.prototype.createBigMatrix = function (matrixLeft, matrixUp) {
+    D3SModelsAdapter.prototype.createBigMatrix = function (matrixLeft, matrixUp) {
 
         var matrix = [
             []
@@ -517,9 +514,9 @@ define(["jquery"], function ($) {
         return matrix
     }
 
-    HandlerCreationModels.prototype.getCodesMap = function () {
+    D3SModelsAdapter.prototype.getCodesMap = function () {
         return mapCodesIndex;
     }
 
-    return HandlerCreationModels;
+    return D3SModelsAdapter;
 })

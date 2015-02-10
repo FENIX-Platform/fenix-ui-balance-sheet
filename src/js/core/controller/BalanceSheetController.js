@@ -1,4 +1,4 @@
-define(["jquery", "fx-balance-sheet/view/GridDataView", "fx-balance-sheet/editorController/FormController",
+/*define(["jquery", "fx-balance-sheet/view/GridDataView", "fx-balance-sheet/editorController/FormController",
         "fx-balance-sheet/exporter/controller/ExportController", "fx-balance-sheet/adapterGrid",
         "editingSpecial/controller/ControllerEditors", "generalObserver/GeneralObserver" , "editHandler", "jquery.sidebar"],
     function ($, GridDataView, EditorController, ExportController, Adapter, SpecialEditorController,
@@ -356,4 +356,43 @@ define(["jquery", "fx-balance-sheet/view/GridDataView", "fx-balance-sheet/editor
 
 
         return BalanceSheetController;
-    });
+    });*/
+
+define([
+    'jquery',
+    'fx-bsheet/viewControllers',
+    'fx-bsheet/visualizationModel'
+
+ ], function($, ViewController, ViewModel){
+
+
+    'use strict'
+
+
+    var viewController, modelController, generalObserver, filterDataConf, viewModel;
+
+
+    function BalanceSheetController(){
+        viewController = new ViewController;
+    }
+
+
+
+    BalanceSheetController.prototype.init = function( configurator, ModelController, FilterDataConf,NProgress){
+
+        var modelController = ModelController;
+        filterDataConf = FilterDataConf;
+
+        var tableDataModel = $.extend(true,[],modelController.getTableDataModel());
+        var gridDataModel = $.extend(true,[],modelController.getGridDataModel());
+
+        // TODO to insert formulas and so calculated model
+        viewController.init(tableDataModel, configurator,filterDataConf,this);
+
+
+
+    }
+
+
+    return BalanceSheetController;
+})
