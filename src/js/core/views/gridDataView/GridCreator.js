@@ -19,9 +19,6 @@ define([
 
         GridCreator.prototype.init = function (configurator,filterDataConf,ControllerViews, AdapterGrid) {
 
-
-
-            debugger;
             adapterGrid =  AdapterGrid;
           //  viewModel = new ViewModel;
          //   table = tableModel;
@@ -32,8 +29,10 @@ define([
         }
 
         GridCreator.prototype.createAndDrawGrid = function (columns, dataSource) {
+
+
+
             var self = this;
-            debugger;
          /*   var gridUi =
                 webix.ui({
                     container: "fx-bsheet_grid",
@@ -67,10 +66,24 @@ define([
                 webix.ui({
                     container: "fx-bsheet_grid",
                     view: "datatable",
+                    rowHeight: 29,
+                    columnWidth: 300,
+                    clipboard: "selection",
                     columns: columns,
                     datatype: "jsarray",
+                    scheme: {
+                        $change: function (item) {
+                            self.createColourConfiguration(item);
+                        }
+                    },
+                    leftSplit: 1,
+                    visibleBatch: 1,
                     data: dataSource
                 });
+
+            webix.event(window, "resize", function () {
+                gridUi.adjust();
+            })
 
 
             return gridUi

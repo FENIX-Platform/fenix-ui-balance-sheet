@@ -1,11 +1,11 @@
-define([ ], function () {
+define([], function () {
 
     'use strict'
 
 
     var instanceData, Configurator, instanceFullTableData, counterEmptySpaces,
         fullRows, fullColumns, indexesDoubleColumnLeft, originalData, leftIndexes, upIndexes,
-        visualizedData, newData, updatedData ;//, supportModel;
+        visualizedData, newData, updatedData;//, supportModel;
 
     // -------------------- SET OPERATIONS --------------------------------------
 
@@ -35,9 +35,9 @@ define([ ], function () {
         originalData = $.extend(true, [], data)
         Configurator = configurator;
         /*
-        supportModel = new SupportModel;
-        supportModel.init(Configurator)
-        */
+         supportModel = new SupportModel;
+         supportModel.init(Configurator)
+         */
     }
 
 
@@ -47,13 +47,13 @@ define([ ], function () {
     }
 
 
-    TableDataModel.prototype.setTableDataModel = function(index, row){
+    TableDataModel.prototype.setTableDataModel = function (index, row) {
         var model = this.getTableData();
         model[index] = row;
     }
 
 
-    TableDataModel.prototype.setAllDataModel = function(index, row){
+    TableDataModel.prototype.setAllDataModel = function (index, row) {
         var model = this.getAllData();
         model[index] = row;
     }
@@ -181,62 +181,71 @@ define([ ], function () {
     }
 
 
-    TableDataModel.prototype.createTableModelFromGrid = function (GridDataModel) {
+    // EVERY ROWS AND COLUMNS REPRESENTATION
+    TableDataModel.prototype.everyRowEveryColumnModel = function () {
+
+        visualizedData = instanceFullTableData;
+
+        return instanceFullTableData;
+
+    }
+
+    // ONLY FULL ROWS AND EVERY COLUMN
+    TableDataModel.prototype.fullRowEveryColumnModel = function () {
 
         var result = [];
-        indexesDoubleColumnLeft = {};
-        if (fullRows.length > 0 && fullColumns.length > 0) {
-            var firstIndex = (counterEmptySpaces.columns.length * fullRows[0]) + fullColumns[0];
-            var firstField = instanceFullTableData[firstIndex][0];
-        }
 
-        for (var i = 0; i < fullRows.length; i++) {
-            var indRow = fullRows[i]
-            for (var j = 0; j < fullColumns.length; j++) {
-                var indCol = fullColumns[j]
+        var numberColumns = counterEmptySpaces.columns.length;
 
-                // for each value contained into a cell
-                var numberColumns = counterEmptySpaces.columns.length;
-                if (GridDataModel["matrixLeft"][0].length == 2) {
-                    if (indRow == 0) {
-                        result.push(instanceFullTableData[indCol])
-                    } else {
-                        var element = instanceFullTableData[(numberColumns * indRow) + (indCol)]
-                        if (typeof firstField !== 'undefined' && firstField !== element[0]) {
-                            firstField = element[0];
-                            var startingIndex = j + (i * fullColumns.length);
-                            for (var k = 0; k < fullColumns.length; k++) {
-                                indexesDoubleColumnLeft[startingIndex + k] = 1;
-                            }
-                        }
-                        result.push(instanceFullTableData[(numberColumns * indRow) + (indCol)])
-                        // new Left key element
-                    }
+        debugger;
 
-                } else {
-                    if (indRow == 0) {
-                        result.push(instanceFullTableData[indCol])
-                    } else {
-                        result.push(instanceFullTableData[(numberColumns * indRow) + (indCol)])
-                    }
-                }
+        // for each Row
+
+        for (var j = 0; j < fullRows.length; j++) {
+            var indexRow = fullRows[j];
+
+            for (var k = 0; k < numberColumns; k++) {
+                result.push(instanceFullTableData[(indexRow * numberColumns) + k])
             }
         }
 
+
+        visualizedData = result;
         return result;
     }
 
 
-    // Represent Every rows but only the full columns
-    TableDataModel.prototype.createColumnSparseTableData = function (modelForCreation) {
+    // ONLY FULL COLUMN AND EVERY ROW (AMIS)
+    TableDataModel.prototype.fullColumnEveryRowModel = function () {
 
         var result = [];
         // for each Row
-        for (var i = 0; i < modelForCreation["matrixAll"].length; i++) {
+        var numberColumns = counterEmptySpaces.columns.length;
+        var rowsNumber = Object.keys(counterEmptySpaces.rows).length
+        for (var i = 0; i < rowsNumber; i++) {
             for (var j = 0; j < fullColumns.length; j++) {
-                var indexColumns = fullColumns[j];
-                var numberColumns = counterEmptySpaces.columns.length;
-                result.push(instanceFullTableData[(numberColumns * i) + indexColumns])
+                result.push(instanceFullTableData[(numberColumns * i) + fullColumns[j]])
+            }
+        }
+
+        visualizedData = result;
+        return result;
+    }
+
+
+    // FULL COLUMN AND FULL ROW (AMIS)
+    TableDataModel.prototype.fullColumnFullRowModel = function () {
+
+        var result = [];
+
+
+        debugger;
+        // for each Row
+        var numberColumns = counterEmptySpaces.columns.length;
+
+        for (var j = 0; j < fullRows.length; j++) {
+            for (var k = 0; k < fullColumns.length; k++) {
+                result.push(instanceFullTableData[(fullRows[j] * numberColumns) + fullColumns[k]])
             }
         }
 
@@ -293,57 +302,57 @@ define([ ], function () {
     }
 
     // return data to save
-    TableDataModel.prototype.getDataToSave = function(){
+    TableDataModel.prototype.getDataToSave = function () {
         var result = {
             "updatedData": updatedData,
-            "newData" : newData
+            "newData": newData
         }
         return result;
     }
 
 
     // This is strict coupled to amis cbs
-    TableDataModel.prototype.addNewForecast= function(dataArray){
-        var mapCodes =supportModel.getMapCodes()
+    TableDataModel.prototype.addNewForecast = function (dataArray) {
+        var mapCodes = supportModel.getMapCodes()
         var data = this.getTableData();
-        for(var i =0;i<dataArray.length; i++){
+        for (var i = 0; i < dataArray.length; i++) {
             visualizedData.push(dataArray[i])
             originalData.push(dataArray[i])
             newData.push(dataArray[i])
         }
 
-        visualizedData.sort(function (a,b) {
+        visualizedData.sort(function (a, b) {
             if (mapCodes[a["0"]] < mapCodes[b["0"]]) {
                 if (a["2"] < b["2"])
                     return -2;
                 return -1;
             }
-            if (mapCodes[a["0"]]> mapCodes[b["0"]]){
-                if (a["2"]> b["2"])
+            if (mapCodes[a["0"]] > mapCodes[b["0"]]) {
+                if (a["2"] > b["2"])
                     return 2;
                 return 1;
-            }else{
+            } else {
                 if (a["2"] < b["2"])
                     return -1;
-                if (a["2"]> b["2"])
+                if (a["2"] > b["2"])
                     return 1;
                 return 0;
             }
         });
-        originalData.sort(function (a,b) {
+        originalData.sort(function (a, b) {
             if (mapCodes[a["0"]] < mapCodes[b["0"]]) {
                 if (a["2"] < b["2"])
                     return -2;
                 return -1;
             }
-            if (mapCodes[a["0"]]> mapCodes[b["0"]]){
-                if (a["2"]> b["2"])
+            if (mapCodes[a["0"]] > mapCodes[b["0"]]) {
+                if (a["2"] > b["2"])
                     return 2;
                 return 1;
-            }else{
+            } else {
                 if (a["2"] < b["2"])
                     return -1;
-                if (a["2"]> b["2"])
+                if (a["2"] > b["2"])
                     return 1;
                 return 0;
             }
@@ -351,37 +360,37 @@ define([ ], function () {
         return this.getTableData()
     }
 
-    TableDataModel.prototype.insertNewDataIntoAllData = function(newData){
-        var mapCodes =supportModel.getMapCodes();
-        for(var i =0; i< newData.length; i++){
+    TableDataModel.prototype.insertNewDataIntoAllData = function (newData) {
+        var mapCodes = supportModel.getMapCodes();
+        for (var i = 0; i < newData.length; i++) {
             originalData.push(newData[i])
         }
 
     }
 
 
-    TableDataModel.prototype.fetchRemainingData = function(data, indexesTableData, indexesAllData){
+    TableDataModel.prototype.fetchRemainingData = function (data, indexesTableData, indexesAllData) {
         var remainingData = []
         var keysFound = []
 
-        for( var i=0; i< indexesTableData.length; i++){
+        for (var i = 0; i < indexesTableData.length; i++) {
             keysFound.push(parseInt(indexesTableData[i].key))
         }
 
-        for( var i=0; i< indexesAllData.length; i++){
+        for (var i = 0; i < indexesAllData.length; i++) {
             keysFound.push(parseInt(indexesAllData[i].key))
         }
 
 
-        for (var i = 0; i < data.length ; i++) {
+        for (var i = 0; i < data.length; i++) {
             var notFound = true;
 
-            for(var h=0; h<keysFound.length && notFound; h++) {
+            for (var h = 0; h < keysFound.length && notFound; h++) {
 
-                if(data[i][0] == keysFound[h]){
+                if (data[i][0] == keysFound[h]) {
                     notFound = false;
                 }
-                else if(data[i][0] !=keysFound[h] && h == (keysFound.length-1)){
+                else if (data[i][0] != keysFound[h] && h == (keysFound.length - 1)) {
                     remainingData.push(data[i])
                 }
             }
@@ -392,23 +401,43 @@ define([ ], function () {
     }
 
 
-
     // This is tightly coupled with amis cbs
-    TableDataModel.prototype.updateDataFromSpecialForm = function(dataFromForm, formChosen){
+    TableDataModel.prototype.updateDataFromSpecialForm = function (dataFromForm, formChosen) {
         var dateInvolved = dataFromForm[0][2];
         var indexes;
         switch (formChosen) {
 
             case 'otherUses':
-                indexes = {"15": true, "21": true, "34": true, "28": true, "29": true, "30": true, "31": true, "32": true, "33": true}
+                indexes = {
+                    "15": true,
+                    "21": true,
+                    "34": true,
+                    "28": true,
+                    "29": true,
+                    "30": true,
+                    "31": true,
+                    "32": true,
+                    "33": true
+                }
                 break;
 
             case "production":
-                indexes = (dataFromForm.length > 3) ? {"4": true, "2": true, "5": true, "37": true} : {"4": true, "5": true, "2": true};
+                indexes = (dataFromForm.length > 3) ? {"4": true, "2": true, "5": true, "37": true} : {
+                    "4": true,
+                    "5": true,
+                    "2": true
+                };
                 break;
 
             case 'productionRice':
-                indexes = (dataFromForm.length > 3) ? {"4": true, "2": true, "5": true,  "998": true, "3": true, "996":true} : {"4": true, "5": true, "2": true};
+                indexes = (dataFromForm.length > 3) ? {
+                    "4": true,
+                    "2": true,
+                    "5": true,
+                    "998": true,
+                    "3": true,
+                    "996": true
+                } : {"4": true, "5": true, "2": true};
                 break;
         }
 
@@ -418,13 +447,11 @@ define([ ], function () {
         var indexesTableData = this.getAllIndexesRequested(tableData, indexes, dateInvolved);
         var indexesToFind = dataFromForm.length - indexesTableData.length;
 
-        var backupIndexesAllData = $.extend(true,{}, indexes);
+        var backupIndexesAllData = $.extend(true, {}, indexes);
         var indexesAllData = this.getAllIndexesRequested(allData, indexes, dateInvolved);
 
-        debugger;
-
         // insert new Data in AllData
-        if(dataFromForm.length - (indexesTableData.length +indexesAllData.length) >0){
+        if (dataFromForm.length - (indexesTableData.length + indexesAllData.length) > 0) {
             var remainingData = this.fetchRemainingData(dataFromForm, indexesTableData, indexesAllData);
             console.log('REMAINING DATA')
             console.log(remainingData)
@@ -433,13 +460,13 @@ define([ ], function () {
         }
 
         // put in updatedData
-        for(var i =0; i<dataFromForm.length; i++){
+        for (var i = 0; i < dataFromForm.length; i++) {
             this.pushInUpdatedData(dataFromForm[i])
         }
 
         // save the data
-        this.saveDataFromIndexes('table',indexesTableData,dataFromForm);
-        if(indexesAllData.length >0) {
+        this.saveDataFromIndexes('table', indexesTableData, dataFromForm);
+        if (indexesAllData.length > 0) {
             this.saveDataFromIndexes('original', indexesAllData, dataFromForm);
         }
         return indexesTableData;
@@ -447,9 +474,9 @@ define([ ], function () {
     }
 
 
-    TableDataModel.prototype.pushInUpdatedData = function(value){
+    TableDataModel.prototype.pushInUpdatedData = function (value) {
         var exist = false;
-        if(updatedData.length >0) {
+        if (updatedData.length > 0) {
             for (var i = 0; i < updatedData.length && !exist; i++) {
                 //if keys are equals
                 if (value[0] == updatedData[i][0] && value[2] == updatedData[i][2]) {
@@ -459,23 +486,23 @@ define([ ], function () {
                     updatedData.push(value)
                 }
             }
-        }else{
+        } else {
             updatedData.push(value)
         }
     }
 
 
     // take all indexes
-    TableDataModel.prototype.getAllIndexesRequested = function(data,indexes,key){
-        var result= []
-        var copyIndexes = $.extend(true,[], indexes)
+    TableDataModel.prototype.getAllIndexesRequested = function (data, indexes, key) {
+        var result = []
+        var copyIndexes = $.extend(true, [], indexes)
         var foundAll = false;
 
         // start with TableData
 
-        for(var i =0; i< data.length && !foundAll; i++){
-            if(data[i][2] == key  && indexes[data[i][0]]){
-                result.push({"key": data[i][0], "index":i})
+        for (var i = 0; i < data.length && !foundAll; i++) {
+            if (data[i][2] == key && indexes[data[i][0]]) {
+                result.push({"key": data[i][0], "index": i})
                 indexes[data[i][0]] = false;
             }
         }
@@ -483,13 +510,13 @@ define([ ], function () {
     }
 
 
-    TableDataModel.prototype.saveDataFromIndexes = function(model, indexes, productionData){
+    TableDataModel.prototype.saveDataFromIndexes = function (model, indexes, productionData) {
         var modelData;
-        modelData = (model == 'table')? this.getTableData() : this.getAllData();
-        for (var i=0; i<indexes.length; i++) {
+        modelData = (model == 'table') ? this.getTableData() : this.getAllData();
+        for (var i = 0; i < indexes.length; i++) {
             for (var j = 0; j < productionData.length; j++) {
-                if( modelData[indexes[i]['index']][0] == productionData[j][0]) {
-                    (model == 'table')? this.setTableDataModel(indexes[i]['index'], productionData[j]) :
+                if (modelData[indexes[i]['index']][0] == productionData[j][0]) {
+                    (model == 'table') ? this.setTableDataModel(indexes[i]['index'], productionData[j]) :
                         this.setAllDataModel(indexes[i]['index'], productionData[j])
                 }
             }

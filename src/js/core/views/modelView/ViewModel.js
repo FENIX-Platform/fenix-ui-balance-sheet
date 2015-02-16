@@ -1,6 +1,7 @@
 define([
     'jquery',
-    'fx-bsheet/dataTypesFormatter'
+    'fx-bsheet/dataTypesFormatter',
+    'moment'
     ], function ($, Formatter) {
 
     'use strict'
@@ -19,6 +20,7 @@ define([
 
 
     ViewModel.prototype.init = function (tableData, Configurator, SupportUtility) {
+
         supportUtility = SupportUtility;
         formatter = new Formatter;
         configurator = Configurator;
@@ -215,16 +217,13 @@ define([
                 break;
 
             case "date":
-                if(value != "20000103") {
                     var yearFrom = value.substr(0, 4);
                     var mmFrom = value.substr(4, 2);
                     var ddFrom = value.substr(6, 2);
                     var dateFrom = new Date(yearFrom, mmFrom - 1, ddFrom)
                     // var date = (value !== 'undefined') ? moment(value).format("YYYYMMDD") : undefined;
                     result = moment(dateFrom).format(configurationKeyColumn.properties.cellProperties.dateFormat)
-                }else{
-                    result = supportUtility.getPreviousSeasonLabel()
-                }
+
                 break;
 
         }

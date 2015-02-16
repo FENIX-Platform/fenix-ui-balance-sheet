@@ -12,7 +12,6 @@ define(['jquery'], function($){
 
 
     FilterDataConfigurator.prototype.getFilterData = function(){
-        debugger;
         return $.extend(true,{},filterData);
     }
 

@@ -19,11 +19,14 @@ define([
 
 
     ControllerViews.prototype.init = function(tableData, Configurator, FilterDataConf, BSheetController){
+        adapterGrid.init(Configurator)
         generalController = BSheetController;
         configurator = Configurator;
         filterDataConf = FilterDataConf;
         gridCreator.init(configurator,filterDataConf,this, adapterGrid)
-        gridCreator.renderGrid(visualizationModel.init(tableData,configurator,filterDataConf));
+        var prova = visualizationModel.init(tableData,configurator,filterDataConf);
+        console.log(prova)
+        gridCreator.renderGrid(prova);
 
     }
 

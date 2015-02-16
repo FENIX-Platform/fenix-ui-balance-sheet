@@ -2,7 +2,8 @@
     "gridConfiguration": {
         "generalOptions":{
             "language": "EN",
-            "fullRowsRepresentation": true
+            "fullRowsRepresentation": true,
+            "fullColumnsRepresentation":true
         },
         "columnsKey": {
             "left": [

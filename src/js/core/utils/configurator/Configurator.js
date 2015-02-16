@@ -95,6 +95,25 @@ define(['jquery', 'amplify'], function ($) {
             }
         }
 
+
+        console.log("appena create!!!")
+
+        console.log("left")
+
+        console.log(leftKeyColumns)
+        console.log(leftKeyIndexes)
+
+
+        console.log("---------------------------------------------------")
+        console.log("up")
+
+
+        console.log(upKeyColumns)
+        console.log(upKeyIndexes)
+        console.log("---------------------------------------------------")
+
+
+
     }
 
 
@@ -303,6 +322,11 @@ define(['jquery', 'amplify'], function ($) {
     // Get the value the representation of row configured on compnent configuration
     Configurator.prototype.getFullRowsRepresentation = function () {
         return compConfiguration.gridConfiguration.generalOptions.fullRowsRepresentation;
+    }
+
+    // Get the value the representation of row configured on compnent configuration
+    Configurator.prototype.getFullColumnsRepresentation = function () {
+        return compConfiguration.gridConfiguration.generalOptions.fullColumnsRepresentation;
     }
 
     // Get the factor of conversion between different Masurement Units

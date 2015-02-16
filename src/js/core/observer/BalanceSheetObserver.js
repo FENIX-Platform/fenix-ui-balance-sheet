@@ -21,7 +21,6 @@ define(['jquery', 'jqwidgets', 'amplify'], function($){
         $('#fx-bsheet_resetGrid').on('click', function(e){
             e.preventDefault();
             e.stopImmediatePropagation();
-            debugger;
             $('#fx-bsheet_loadData').click();
 
         })

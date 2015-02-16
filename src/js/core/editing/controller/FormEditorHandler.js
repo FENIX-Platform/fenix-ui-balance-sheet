@@ -44,7 +44,6 @@ define(["jquery", "fx-balance-sheet/editor/cell/CellEditor", "fx-balance-sheet/f
         }
         // validation (TODO)
 
-        debugger;
         if (EditorValidator.init(result, configurator)) {
 
             FormEditor.destroyIfExist()

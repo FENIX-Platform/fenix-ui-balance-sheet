@@ -38,9 +38,13 @@ define([
     Start.prototype.init = function () {
 
         NProgress.start()
+        console.log(this.o.configurations.componentConfig)
+
         configurator.init(this.o.resources.dsd, this.o.configurations)
+
         modelController.init(this.o.resources.data, configurator)
         filterDataConf.init(this.o.resources.filterData);
+
 
         generalController.init( configurator, modelController,filterDataConf, NProgress);
 

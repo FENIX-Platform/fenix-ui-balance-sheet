@@ -681,7 +681,6 @@ define(["jquery", "fx-balance-sheet/formatter/DatatypesFormatter",
                     result = flagController.getStringFromCodes(codes);
 
                 } else {
-                    debugger;
                     result = $("#" + htmlvalue.id).val();
                     if (typeof result == 'undefined' || result == '' ) {
                         result = null

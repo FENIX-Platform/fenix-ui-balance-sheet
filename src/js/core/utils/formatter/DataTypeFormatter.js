@@ -91,18 +91,13 @@ define([
 
             case "date":
                 if (typeof value != 'undefined' && value !== 'undefined' && value != null) {
-                    if (value != "20000103") {
-                        var year = value.substr(0, 4);
-                        var month = value.substr(4, 2);
-                        var day = value.substr(6, 2);
-                        var date = new Date(year, month - 1, day);
-                        result = moment(date).format(configurationKeyColumn.properties.cellProperties.dateFormat)
-                    } else {
-                        var indexPrevious  =    $("#selectionYear").jqxComboBox('getSelectedIndex')+1
-                        var season = $("#selectionYear").jqxComboBox('getItem', indexPrevious).label;
-                        result = season;
-                    }
-                } else result = undefined
+                    var year = value.substr(0, 4);
+                    var month = value.substr(4, 2);
+                    var day = value.substr(6, 2);
+                    var date = new Date(year, month - 1, day);
+                    result = moment(date).format(configurationKeyColumn.properties.cellProperties.dateFormat)
+                } else
+                    result = null;
                 break;
 
             case "code" || "codeList" || "customCode":

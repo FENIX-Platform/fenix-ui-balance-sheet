@@ -28,11 +28,56 @@ define(["jquery",
         modelForCreation = CreatorModels.init(configurator)
         instanceGridDataModel = GridModel.init(modelForCreation, tableData, indexes)
 
+
+        console.log(configurator.getLeftKeyColumn())
+
+        console.log("---------------------------------------------------")
+
+
+        console.log(configurator.getUpKeyColumn())
+        console.log("---------------------------------------------------")
+
         TableModel.createFullTableData(modelForCreation)
 
         // if a full rows representation need to be visualized
-        var newTable =(configurator.getFullRowsRepresentation())?  TableModel.createColumnSparseTableData(modelForCreation) :
-            TableModel.createTableModelFromGrid(instanceGridDataModel);
+
+        var rowsRepresentation = (typeof configurator.getFullRowsRepresentation()!= 'undefined')? configurator.getFullRowsRepresentation():  true;
+
+        var columnsRepresentation = (typeof configurator.getFullColumnsRepresentation()!= 'undefined')? configurator.getFullColumnsRepresentation():  false;
+
+        var newTable;
+        console.log(GridModel)
+        debugger;
+        switch (true){
+
+            case (rowsRepresentation == columnsRepresentation) :
+
+                // full columns and full rows OR everycolumns and everyRows
+                newTable = (rowsRepresentation == false)?
+                    TableModel.everyRowEveryColumnModel(): TableModel.fullColumnFullRowModel();
+                break;
+
+            case (rowsRepresentation == true):
+
+                // every row and full column
+                newTable = TableModel.fullRowEveryColumnModel();
+                break;
+
+            case (rowsRepresentation == false):
+                newTable = TableModel.fullColumnEveryRowModel();
+                break;
+        }
+
+
+
+
+
+
+        console.log("-------------------------------------------------------------")
+        console.log(newTable)
+        console.log("-------------------------------------------------------------")
+
+        debugger;
 
         TableModel.createSparseTableData(newTable);
 

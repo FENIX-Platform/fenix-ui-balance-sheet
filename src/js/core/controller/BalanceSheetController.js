@@ -387,6 +387,8 @@ define([
         var gridDataModel = $.extend(true,[],modelController.getGridDataModel());
 
         // TODO to insert formulas and so calculated model
+        console.log('TABLE DATA MODEL!!!')
+        console.log(tableDataModel)
         viewController.init(tableDataModel, configurator,filterDataConf,this);
 
 

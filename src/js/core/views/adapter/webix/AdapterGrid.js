@@ -4,12 +4,16 @@ define([], function(){
     'use strict'
 
 
-    var numberOfColumns, differentDates,mapTitles
+    var numberOfColumns, differentDates,mapTitles, configurator
 
 
     function AdapterDataTable(){
         differentDates = [];
         mapTitles = {}
+    }
+
+    AdapterDataTable.prototype.init = function(Configurator){
+        configurator = Configurator;
     }
 
 
@@ -53,19 +57,24 @@ define([], function(){
 
 
     AdapterDataTable.prototype.createPropertiesFromModel = function(model){
+        // OK
         differentDates = {};
-        differentDates[ model[0][2]] = true
+        // Only one dimension admitted
+        var upKeyColumnIndex = configurator.getUpKeyColumnIndexes()[0];
+        var leftKeyColumnIndex = configurator.getLeftKeyColumnIndexes()[0];
+
+        differentDates[ model[0][upKeyColumnIndex]] = true
         numberOfColumns = 1
         for(var i =0; i< model.length; i++){
             // not exist in map
-            if(typeof mapTitles[model[i][0]] == 'undefined') {
-                mapTitles[model[i][0]] = [i]
+            if(typeof mapTitles[model[i][leftKeyColumnIndex]] == 'undefined') {
+                mapTitles[model[i][leftKeyColumnIndex]] = [i]
             }
             else{
-                mapTitles[model[i][0]].push(i)
+                mapTitles[model[i][leftKeyColumnIndex]].push(i)
             }
-            if(typeof differentDates[model[i][2]] === 'undefined'){
-                differentDates[model[i][2]] = true
+            if(typeof differentDates[model[i][upKeyColumnIndex]] === 'undefined'){
+                differentDates[model[i][upKeyColumnIndex]] = true
                 numberOfColumns++;
             }
         }
