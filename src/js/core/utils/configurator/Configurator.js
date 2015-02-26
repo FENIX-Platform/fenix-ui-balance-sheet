@@ -66,8 +66,7 @@ define(['jquery', 'amplify'], function ($) {
             if (dsdConf.dsd.columns[i].domain.key) {
                 var found = false;
                 for (var k = 0; k < configuration.gridConfiguration.columnsKey.left.length && !found; k++) {
-                    if (configuration.gridConfiguration.columnsKey.left[k].columnId ==
-                        dsdConf.dsd.columns[i].domain.id) {
+                    if (configuration.gridConfiguration.columnsKey.left[k].columnId ==i ){
                         lefKeyColumnConfiguration.push(configuration.gridConfiguration.columnsKey.left.splice(k, 1)[0])
                         leftKeyColumns.push(dsdConf.dsd.columns[i])
                         leftKeyIndexes.push(i);

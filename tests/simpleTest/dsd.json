@@ -1,0 +1,1338 @@
+{
+  "dsd": {
+    "columns": [
+      {
+        "dataType": "code",
+        "title": {
+          "EN": "Area"
+        },
+        "values": {
+          "codes": [
+            {
+              "codes": [
+                {
+                  "code": "255",
+                  "label": {
+                    "PT": "Emirados Árabes Unidos",
+                    "FR": "Émirats arabes unis",
+                    "AR": "الإمارات العربية المتحدة",
+                    "EN": "United Arab Emirates",
+                    "RU": "Объединенные Арабские Эмираты",
+                    "ES": "Emiratos Árabes Unidos",
+                    "ZH": "阿拉伯联合酋长国"
+                  }
+                }
+              ],
+              "idCodeList": "UAE_GAUL",
+              "extendedName": {
+                "EN": "Global administrative unit layer"
+              }
+            }
+          ]
+        },
+        "domain": {
+          "codes": [
+            {
+              "idCodeList": "UAE_GAUL",
+              "extendedName": {
+                "EN": "Global administrative unit layer"
+              }
+            }
+          ]
+        },
+        "subject": "geo",
+        "key": true,
+        "id": "Area"
+      },
+      {
+        "dataType": "code",
+        "title": {
+          "EN": "Element"
+        },
+        "values": {
+          "codes": [
+            {
+              "codes": [
+                {
+                  "code": "2610",
+                  "label": {
+                    "EN": "Import Quantity"
+                  }
+                },
+                {
+                  "code": "2620",
+                  "label": {
+                    "EN": "Import Value"
+                  }
+                },
+                {
+                  "code": "5710",
+                  "label": {
+                    "EN": "Re-export quantity"
+                  }
+                },
+                {
+                  "code": "5722",
+                  "label": {
+                    "EN": "Re-export value"
+                  }
+                },
+                {
+                  "code": "2910",
+                  "label": {
+                    "EN": "Export Quantity"
+                  }
+                },
+                {
+                  "code": "2920",
+                  "label": {
+                    "EN": "Export Value"
+                  }
+                }
+              ],
+              "idCodeList": "UAE_Elements",
+              "extendedName": {
+                "EN": "United Arab Emirates - Elements"
+              }
+            }
+          ]
+        },
+        "domain": {
+          "codes": [
+            {
+              "idCodeList": "UAE_Elements",
+              "extendedName": {
+                "EN": "United Arab Emirates - Elements"
+              }
+            }
+          ]
+        },
+        "key": true,
+        "id": "Element"
+      },
+      {
+        "dataType": "code",
+        "title": {
+          "EN": "Item"
+        },
+        "values": {
+          "codes": [
+            {
+              "version": "2012",
+              "codes": [
+                {
+                  "code": "0101",
+                  "label": {
+                    "EN": "Live horses, asses, mules and hinnies."
+                  }
+                },
+                {
+                  "code": "0102",
+                  "label": {
+                    "EN": "Live bovine animals."
+                  }
+                },
+                {
+                  "code": "0103",
+                  "label": {
+                    "EN": "Live swine."
+                  }
+                },
+                {
+                  "code": "0104",
+                  "label": {
+                    "EN": "Live sheep and goats."
+                  }
+                },
+                {
+                  "code": "0105",
+                  "label": {
+                    "EN": "Live poultry, that is to say, fowls of the species Gallus domesticus, ducks, geese, turkeys and guinea fowls."
+                  }
+                },
+                {
+                  "code": "0106",
+                  "label": {
+                    "EN": "Other live animals."
+                  }
+                },
+                {
+                  "code": "0301",
+                  "label": {
+                    "EN": "Live fish."
+                  }
+                },
+                {
+                  "code": "101"
+                },
+                {
+                  "code": "0201",
+                  "label": {
+                    "EN": "Meat of bovine animals, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0202",
+                  "label": {
+                    "EN": "Meat of bovine animals, frozen."
+                  }
+                },
+                {
+                  "code": "0203",
+                  "label": {
+                    "EN": "Meat of swine, fresh, chilled or frozen."
+                  }
+                },
+                {
+                  "code": "0204",
+                  "label": {
+                    "EN": "Meat of sheep or goats, fresh, chilled or frozen."
+                  }
+                },
+                {
+                  "code": "0205",
+                  "label": {
+                    "EN": "Meat of horses, asses, mules or hinnies, fresh, chilled or frozen."
+                  }
+                },
+                {
+                  "code": "0206",
+                  "label": {
+                    "EN": "Edible offal of bovine animals, swine, sheep, goats, horses, asses, mules or hinnies, fresh, chilled or frozen."
+                  }
+                },
+                {
+                  "code": "0207",
+                  "label": {
+                    "EN": "Meat and edible offal, of the poultry of heading 01.05, fresh, chilled or frozen."
+                  }
+                },
+                {
+                  "code": "0208",
+                  "label": {
+                    "EN": "Other meat and edible meat offal, fresh, chilled or frozen."
+                  }
+                },
+                {
+                  "code": "0209",
+                  "label": {
+                    "EN": "Pig fat, free of lean meat, and poultry fat, not rendered or otherwise extracted, fresh, chilled, frozen, salted, in brine, dried or smoked."
+                  }
+                },
+                {
+                  "code": "0210",
+                  "label": {
+                    "EN": "Meat and edible meat offal, salted, in brine, dried or smoked; edible flours and meals of meat or meat offal."
+                  }
+                },
+                {
+                  "code": "0302",
+                  "label": {
+                    "EN": "Fish, fresh or chilled, excluding fish fillets and other fish meat of heading 03.04."
+                  }
+                },
+                {
+                  "code": "0303",
+                  "label": {
+                    "EN": "Fish, frozen, excluding fish fillets and other fish meat of heading 03.04."
+                  }
+                },
+                {
+                  "code": "0304",
+                  "label": {
+                    "EN": "Fish fillets and other fish meat (whether or not minced), fresh, chilled or frozen."
+                  }
+                },
+                {
+                  "code": "0305",
+                  "label": {
+                    "EN": "Fish, dried, salted or in brine; smoked fish, whether or not cooked before or during the smoking process; flours, meals and pellets of fish, fit for human consumption."
+                  }
+                },
+                {
+                  "code": "0306",
+                  "label": {
+                    "EN": "Crustaceans, whether in shell or not, live, fresh, chilled, frozen, dried, salted or in brine; smoked crustaceans, whether in shell or not, whether or not cooked before or during the smoking process; crustaceans, in shell, cooked by steaming or by boiling in water, whether or not chilled, frozen, dried, salted or in brine; flours, meals and pellets of crustaceans, fit for human consumption."
+                  }
+                },
+                {
+                  "code": "0307",
+                  "label": {
+                    "EN": "Molluscs, whether in shell or not, live, fresh, chilled, frozen, dried, salted or in brine; smoked molluscs, whether in shell or not, whether or not cooked before or during the smoking process; flours, meals and pellets of molluscs, fit for human consumption."
+                  }
+                },
+                {
+                  "code": "0401",
+                  "label": {
+                    "EN": "Milk and cream, not concentrated nor containing added sugar or other sweetening matter."
+                  }
+                },
+                {
+                  "code": "0402",
+                  "label": {
+                    "EN": "Milk and cream, concentrated or containing added sugar or other sweetening matter."
+                  }
+                },
+                {
+                  "code": "0403",
+                  "label": {
+                    "EN": "Buttermilk, curdled milk and cream, yogurt, kephir and other fermented or acidified milk and cream, whether or not concentrated or containing added sugar or other sweetening matter or flavoured or containing added fruit, nuts or cocoa."
+                  }
+                },
+                {
+                  "code": "0404",
+                  "label": {
+                    "EN": "Whey, whether or not concentrated or containing added sugar or other sweetening matter; products consisting of natural milk constituents, whether or not containing added sugar or other sweetening matter, not elsewhere specified or included."
+                  }
+                },
+                {
+                  "code": "0405",
+                  "label": {
+                    "EN": "Butter and other fats and oils derived from milk; dairy spreads."
+                  }
+                },
+                {
+                  "code": "0406",
+                  "label": {
+                    "EN": "Cheese and curd."
+                  }
+                },
+                {
+                  "code": "0407",
+                  "label": {
+                    "EN": "Birds' eggs, in shell, fresh, preserved or cooked."
+                  }
+                },
+                {
+                  "code": "0408",
+                  "label": {
+                    "EN": "Birds' eggs, not in shell, and egg yolks, fresh, dried, cooked by steaming or by boiling in water, moulded, frozen or otherwise preserved, whether or not containing added sugar or other sweetening matter."
+                  }
+                },
+                {
+                  "code": "0409",
+                  "label": {
+                    "EN": "Natural honey."
+                  }
+                },
+                {
+                  "code": "0410",
+                  "label": {
+                    "EN": "Edible products of animal origin, not elsewhere specified or included."
+                  }
+                },
+                {
+                  "code": "0501",
+                  "label": {
+                    "EN": "Human hair, unworked, whether or not washed or scoured; waste of human hair."
+                  }
+                },
+                {
+                  "code": "0502",
+                  "label": {
+                    "EN": "Pigs', hogs' or boars' bristles and hair; badger hair and other brush making hair; waste of such bristles or hair."
+                  }
+                },
+                {
+                  "code": "0503"
+                },
+                {
+                  "code": "0504",
+                  "label": {
+                    "EN": "Guts, bladders and stomachs of animals (other than fish), whole and pieces thereof, fresh, chilled, frozen, salted, in brine, dried or smoked."
+                  }
+                },
+                {
+                  "code": "0505",
+                  "label": {
+                    "EN": "Skins and other parts of birds, with their feathers or down, feathers and parts of feathers (whether or not with trimmed edges) and down, not further worked than cleaned, disinfected or treated for preservation; powder and waste of feathers or parts of feathers."
+                  }
+                },
+                {
+                  "code": "0507",
+                  "label": {
+                    "EN": "Ivory, tortoise-shell, whalebone and whalebone hair, horns, antlers, hooves, nails, claws and beaks, unworked or simply prepared but not cut to shape; powder and waste of these products."
+                  }
+                },
+                {
+                  "code": "0508",
+                  "label": {
+                    "EN": "Coral and similar materials, unworked or simply prepared but not otherwise worked; shells of molluscs, crustaceans or echinoderms and cuttle-bone, unworked or simply prepared but not cut to shape, powder and waste thereof."
+                  }
+                },
+                {
+                  "code": "0509"
+                },
+                {
+                  "code": "0510",
+                  "label": {
+                    "EN": "Ambergris, castoreum, civet and musk; cantharides; bile, whether or not dried; glands and other animal products used in the preparation of pharmaceutical products, fresh, chilled, frozen or otherwise provisionally preserved."
+                  }
+                },
+                {
+                  "code": "0511",
+                  "label": {
+                    "EN": "Animal products not elsewhere specified or included; dead animals of Chapter 1 or 3, unfit for human consumption."
+                  }
+                },
+                {
+                  "code": "0601",
+                  "label": {
+                    "EN": "Bulbs, tubers, tuberous roots, corms, crowns and rhizomes, dormant, in growth or in flower; chicory plants and roots other than roots of heading 12.12."
+                  }
+                },
+                {
+                  "code": "0602",
+                  "label": {
+                    "EN": "Other live plants (including their roots), cuttings and slips; mushroom spawn."
+                  }
+                },
+                {
+                  "code": "0603",
+                  "label": {
+                    "EN": "Cut flowers and flower buds of a kind suitable for bouquets or for ornamental purposes, fresh, dried, dyed, bleached, impregnated or otherwise prepared."
+                  }
+                },
+                {
+                  "code": "0604",
+                  "label": {
+                    "EN": "Foliage, branches and other parts of plants, without flowers or flower buds, and grasses, mosses and lichens, being goods of a kind suitable for bouquets or for ornamental purposes, fresh, dried, dyed, bleached, impregnated or otherwise prepared."
+                  }
+                },
+                {
+                  "code": "0701",
+                  "label": {
+                    "EN": "Potatoes, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0702",
+                  "label": {
+                    "EN": "Tomatoes, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0703",
+                  "label": {
+                    "EN": "Onions, shallots, garlic, leeks and other alliaceous vegetables, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0704",
+                  "label": {
+                    "EN": "Cabbages, cauliflowers, kohlrabi, kale and similar edible brassicas, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0705",
+                  "label": {
+                    "EN": "Lettuce (Lactuca sativa) and chicory (Cichorium spp.), fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0706",
+                  "label": {
+                    "EN": "Carrots, turnips, salad beetroot, salsify, celeriac, radishes and similar edible roots, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0707",
+                  "label": {
+                    "EN": "Cucumbers and gherkins, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0708",
+                  "label": {
+                    "EN": "Leguminous vegetables, shelled or unshelled, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0709",
+                  "label": {
+                    "EN": "Other vegetables, fresh or chilled."
+                  }
+                },
+                {
+                  "code": "0710",
+                  "label": {
+                    "EN": "Vegetables (uncooked or cooked by steaming or boiling in water), frozen."
+                  }
+                },
+                {
+                  "code": "0711",
+                  "label": {
+                    "EN": "Vegetables provisionally preserved (for example, by sulphur dioxide gas, in brine, in sulphur water or in other preservative solutions), but unsuitable in that state for immediate consumption."
+                  }
+                },
+                {
+                  "code": "0712",
+                  "label": {
+                    "EN": "Dried vegetables, whole, cut, sliced, broken or in powder, but not further prepared."
+                  }
+                },
+                {
+                  "code": "0713",
+                  "label": {
+                    "EN": "Dried leguminous vegetables, shelled, whether or not skinned or split."
+                  }
+                },
+                {
+                  "code": "0714",
+                  "label": {
+                    "EN": "Manioc, arrowroot, salep, Jerusalem artichokes, sweet potatoes and similar roots and tubers with high starch or inulin content, fresh, chilled, frozen or dried, whether or not sliced or in the form of pellets; sago pith."
+                  }
+                },
+                {
+                  "code": "0801",
+                  "label": {
+                    "EN": "Coconuts, Brazil nuts and cashew nuts, fresh or dried, whether or not shelled or peeled."
+                  }
+                },
+                {
+                  "code": "0802",
+                  "label": {
+                    "EN": "Other nuts, fresh or dried, whether or not shelled or peeled."
+                  }
+                },
+                {
+                  "code": "0803",
+                  "label": {
+                    "EN": "Bananas, including plantains, fresh or dried."
+                  }
+                },
+                {
+                  "code": "0804",
+                  "label": {
+                    "EN": "Dates, figs, pineapples, avocados, guavas, mangoes and mangosteens, fresh or dried."
+                  }
+                },
+                {
+                  "code": "0805",
+                  "label": {
+                    "EN": "Citrus fruit, fresh or dried."
+                  }
+                },
+                {
+                  "code": "0806",
+                  "label": {
+                    "EN": "Grapes, fresh or dried."
+                  }
+                },
+                {
+                  "code": "0807",
+                  "label": {
+                    "EN": "Melons (including watermelons) and papaws (papayas), fresh."
+                  }
+                },
+                {
+                  "code": "0808",
+                  "label": {
+                    "EN": "Apples, pears and quinces, fresh."
+                  }
+                },
+                {
+                  "code": "0809",
+                  "label": {
+                    "EN": "Apricots, cherries, peaches (including nectarines), plums and sloes, fresh."
+                  }
+                },
+                {
+                  "code": "0810",
+                  "label": {
+                    "EN": "Other fruit, fresh."
+                  }
+                },
+                {
+                  "code": "0811",
+                  "label": {
+                    "EN": "Fruit and nuts, uncooked or cooked by steaming or boiling in water, frozen, whether or not containing added sugar or other sweetening matter."
+                  }
+                },
+                {
+                  "code": "0812",
+                  "label": {
+                    "EN": "Fruit and nuts, provisionally preserved (for example, by sulphur dioxide gas, in brine, in sulphur water or in other preservative solutions), but unsuitable in that state for immediate consumption."
+                  }
+                },
+                {
+                  "code": "0813",
+                  "label": {
+                    "EN": "Fruit, dried, other than that of headings 08.01 to 08.06; mixtures of nuts or dried fruits of this Chapter."
+                  }
+                },
+                {
+                  "code": "0814",
+                  "label": {
+                    "EN": "Peel of citrus fruit or melons (including watermelons), fresh, frozen, dried or provisionally preserved in brine, in sulphur water or in other preservative solutions."
+                  }
+                },
+                {
+                  "code": "0901",
+                  "label": {
+                    "EN": "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion."
+                  }
+                },
+                {
+                  "code": "0902",
+                  "label": {
+                    "EN": "Tea, whether or not flavoured."
+                  }
+                },
+                {
+                  "code": "0903",
+                  "label": {
+                    "EN": "Maté."
+                  }
+                },
+                {
+                  "code": "0904",
+                  "label": {
+                    "EN": "Pepper of the genus Piper; dried or crushed or ground fruits of the genus Capsicum or of the genus Pimenta."
+                  }
+                },
+                {
+                  "code": "0905",
+                  "label": {
+                    "EN": "Vanilla."
+                  }
+                },
+                {
+                  "code": "0906",
+                  "label": {
+                    "EN": "Cinnamon and cinnamon-tree flowers."
+                  }
+                },
+                {
+                  "code": "0907",
+                  "label": {
+                    "EN": "Cloves (whole fruit, cloves and stems)."
+                  }
+                },
+                {
+                  "code": "0908",
+                  "label": {
+                    "EN": "Nutmeg, mace and cardamoms."
+                  }
+                },
+                {
+                  "code": "0909",
+                  "label": {
+                    "EN": "Seeds of anise, badian, fennel, coriander, cumin or caraway; juniper berries."
+                  }
+                },
+                {
+                  "code": "0910",
+                  "label": {
+                    "EN": "Ginger, saffron, turmeric (curcuma), thyme, bay leaves, curry and other spices."
+                  }
+                },
+                {
+                  "code": "1001",
+                  "label": {
+                    "EN": "Wheat and meslin."
+                  }
+                },
+                {
+                  "code": "1002",
+                  "label": {
+                    "EN": "Rye."
+                  }
+                },
+                {
+                  "code": "1003",
+                  "label": {
+                    "EN": "Barley."
+                  }
+                },
+                {
+                  "code": "1004",
+                  "label": {
+                    "EN": "Oats."
+                  }
+                },
+                {
+                  "code": "1005",
+                  "label": {
+                    "EN": "Maize (corn)."
+                  }
+                },
+                {
+                  "code": "1006",
+                  "label": {
+                    "EN": "Rice."
+                  }
+                },
+                {
+                  "code": "1007",
+                  "label": {
+                    "EN": "Grain sorghum."
+                  }
+                },
+                {
+                  "code": "1008",
+                  "label": {
+                    "EN": "Buckwheat, millet and canary seeds; other cereals."
+                  }
+                },
+                {
+                  "code": "1101",
+                  "label": {
+                    "EN": "Wheat or meslin flour."
+                  }
+                },
+                {
+                  "code": "1102",
+                  "label": {
+                    "EN": "Cereal flours other than of wheat or meslin."
+                  }
+                },
+                {
+                  "code": "1103",
+                  "label": {
+                    "EN": "Cereal groats, meal and pellets."
+                  }
+                },
+                {
+                  "code": "1104",
+                  "label": {
+                    "EN": "Cereal grains otherwise worked (for example, hulled, rolled, flaked, pearled, sliced or kibbled), except rice of heading 10.06; germ of cereals, whole, rolled, flaked or ground."
+                  }
+                },
+                {
+                  "code": "1105",
+                  "label": {
+                    "EN": "Flour, meal, powder, flakes, granules and pellets of potatoes."
+                  }
+                },
+                {
+                  "code": "1106",
+                  "label": {
+                    "EN": "Flour, meal and powder of the dried leguminous vegetables of heading 07.13, of sago or of roots or tubers of heading 07.14 or of the products of Chapter 8."
+                  }
+                },
+                {
+                  "code": "1107",
+                  "label": {
+                    "EN": "Malt, whether or not roasted."
+                  }
+                },
+                {
+                  "code": "1108",
+                  "label": {
+                    "EN": "Starches; inulin."
+                  }
+                },
+                {
+                  "code": "1109",
+                  "label": {
+                    "EN": "Wheat gluten, whether or not dried."
+                  }
+                },
+                {
+                  "code": "1201",
+                  "label": {
+                    "EN": "Soya beans, whether or not broken."
+                  }
+                },
+                {
+                  "code": "1202",
+                  "label": {
+                    "EN": "Ground-nuts, not roasted or otherwise cooked, whether or not shelled or broken."
+                  }
+                },
+                {
+                  "code": "1203",
+                  "label": {
+                    "EN": "Copra."
+                  }
+                },
+                {
+                  "code": "1204",
+                  "label": {
+                    "EN": "Linseed, whether or not broken."
+                  }
+                },
+                {
+                  "code": "1205",
+                  "label": {
+                    "EN": "Rape or colza seeds, whether or not broken."
+                  }
+                },
+                {
+                  "code": "1206",
+                  "label": {
+                    "EN": "Sunflower seeds, whether or not broken."
+                  }
+                },
+                {
+                  "code": "1207",
+                  "label": {
+                    "EN": "Other oil seeds and oleaginous fruits, whether or not broken."
+                  }
+                },
+                {
+                  "code": "1208",
+                  "label": {
+                    "EN": "Flours and meals of oil seeds or oleaginous fruits, other than those of mustard."
+                  }
+                },
+                {
+                  "code": "1209",
+                  "label": {
+                    "EN": "Seeds, fruit and spores, of a kind used for sowing."
+                  }
+                },
+                {
+                  "code": "1210",
+                  "label": {
+                    "EN": "Hop cones, fresh or dried, whether or not ground, powdered or in the form of pellets; lupulin."
+                  }
+                },
+                {
+                  "code": "1211",
+                  "label": {
+                    "EN": "Plants and parts of plants (including seeds and fruits), of a kind used primarily in perfumery, in pharmacy or for insecticidal, fungicidal or similar purposes, fresh or dried, whether or not cut, crushed or powdered."
+                  }
+                },
+                {
+                  "code": "1212",
+                  "label": {
+                    "EN": "Locust beans, seaweeds and other algae, sugar beet and sugar cane, fresh, chilled, frozen or dried, whether or not ground; fruit stones and kernels and other vegetable products (including unroasted chicory roots of the variety Cichorium intybus sativum) of a kind used primarily for human consumption, not elsewhere specified or included."
+                  }
+                },
+                {
+                  "code": "1213",
+                  "label": {
+                    "EN": "Cereal straw and husks, unprepared, whether or not chopped, ground, pressed or in the form of pellets."
+                  }
+                },
+                {
+                  "code": "1214",
+                  "label": {
+                    "EN": "Swedes, mangolds, fodder roots, hay, lucerne (alfalfa), clover, sainfoin, forage kale, lupines, vetches and similar forage products, whether or not in the form of pellets."
+                  }
+                },
+                {
+                  "code": "1301",
+                  "label": {
+                    "EN": "Lac; natural gums, resins, gum-resins and oleoresins (for example, balsams)."
+                  }
+                },
+                {
+                  "code": "1302",
+                  "label": {
+                    "EN": "Vegetable saps and extracts; pectic substances, pectinates and pectates; agar-agar and other mucilages and thickeners, whether or not modified, derived from vegetable products."
+                  }
+                },
+                {
+                  "code": "1401",
+                  "label": {
+                    "EN": "Vegetable materials of a kind used primarily for plaiting (for example, bamboos, rattans, reeds, rushes, osier, raffia, cleaned, bleached or dyed cereal straw, and lime bark)."
+                  }
+                },
+                {
+                  "code": "1402"
+                },
+                {
+                  "code": "1403"
+                },
+                {
+                  "code": "1404",
+                  "label": {
+                    "EN": "Vegetable products not elsewhere specified or included."
+                  }
+                },
+                {
+                  "code": "1501",
+                  "label": {
+                    "EN": "Pig fat (including lard) and poultry fat, other than that of heading 02.09 or 15.03."
+                  }
+                },
+                {
+                  "code": "1502",
+                  "label": {
+                    "EN": "Fats of bovine animals, sheep or goats, other than those of heading 15.03."
+                  }
+                },
+                {
+                  "code": "1503",
+                  "label": {
+                    "EN": "Lard stearin, lard oil, oleostearin, oleo-oil and tallow oil, not emulsified or mixed or otherwise prepared."
+                  }
+                },
+                {
+                  "code": "1504",
+                  "label": {
+                    "EN": "Fats and oils and their fractions, of fish or marine mammals, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1505",
+                  "label": {
+                    "EN": "Wool grease and fatty substances derived therefrom (including lanolin)."
+                  }
+                },
+                {
+                  "code": "1506",
+                  "label": {
+                    "EN": "Other animal fats and oils and their fractions, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1507",
+                  "label": {
+                    "EN": "Soya-bean oil and its fractions, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1508",
+                  "label": {
+                    "EN": "Ground-nut oil and its fractions, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1509",
+                  "label": {
+                    "EN": "Olive oil and its fractions, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1510",
+                  "label": {
+                    "EN": "Other oils and their fractions, obtained solely from olives, whether or not refined, but not chemically modified, including blends of these oils or fractions with oils or fractions of heading 15.09."
+                  }
+                },
+                {
+                  "code": "1511",
+                  "label": {
+                    "EN": "Palm oil and its fractions, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1512",
+                  "label": {
+                    "EN": "Sunflower-seed, safflower or cotton-seed oil and fractions thereof, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1513",
+                  "label": {
+                    "EN": "Coconut (copra), palm kernel or babassu oil and fractions thereof, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1514",
+                  "label": {
+                    "EN": "Rape, colza or mustard oil and fractions thereof, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1515",
+                  "label": {
+                    "EN": "Other fixed vegetable fats and oils (including jojoba oil) and their fractions, whether or not refined, but not chemically modified."
+                  }
+                },
+                {
+                  "code": "1516",
+                  "label": {
+                    "EN": "Animal or vegetable fats and oils and their fractions, partly or wholly hydrogenated, inter-esterified, re-esterified or elaidinised, whether or not refined, but not further prepared."
+                  }
+                },
+                {
+                  "code": "1517",
+                  "label": {
+                    "EN": "Margarine; edible mixtures or preparations of animal or vegetable fats or oils or of fractions of different fats or oils of this Chapter, other than edible fats or oils or their fractions of heading 15.16."
+                  }
+                },
+                {
+                  "code": "1518",
+                  "label": {
+                    "EN": "Animal or vegetable fats and oils and their fractions, boiled, oxidised, dehydrated, sulphurised, blown, polymerised by heat in vacuum or in inert gas or otherwise chemically modified, excluding those of heading 15.16; inedible mixtures or preparations of animal or vegetable fats or oils or of fractions of different fats or oils of this Chapter, not elsewhere specified or included."
+                  }
+                },
+                {
+                  "code": "1520",
+                  "label": {
+                    "EN": "Glycerol, crude; glycerol waters and glycerol lyes."
+                  }
+                },
+                {
+                  "code": "1521",
+                  "label": {
+                    "EN": "Vegetable waxes (other than triglycerides), beeswax, other insect waxes and spermaceti, whether or not refined or coloured."
+                  }
+                },
+                {
+                  "code": "1522",
+                  "label": {
+                    "EN": "Degras; residues resulting from the treatment of fatty substances or animal or vegetable waxes."
+                  }
+                },
+                {
+                  "code": "0506",
+                  "label": {
+                    "EN": "Bones and horn-cores, unworked, defatted, simply prepared (but not cut to shape), treated with acid or degelatinised; powder and waste of these products."
+                  }
+                }
+              ],
+              "idCodeList": "HS",
+              "extendedName": {
+                "EN": "HS 2012"
+              }
+            }
+          ]
+        },
+        "domain": {
+          "codes": [
+            {
+              "version": "2012",
+              "idCodeList": "HS",
+              "extendedName": {
+                "EN": "HS 2012"
+              }
+            }
+          ]
+        },
+        "subject": "item",
+        "key": true,
+        "id": "Item"
+      },
+      {
+        "dataType": "year",
+        "title": {
+          "EN": "Year"
+        },
+        "values": {
+          "timeList": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            301,
+            101,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            401,
+            402,
+            403,
+            404,
+            405,
+            406,
+            407,
+            408,
+            409,
+            410,
+            501,
+            502,
+            503,
+            504,
+            505,
+            507,
+            508,
+            509,
+            510,
+            511,
+            601,
+            602,
+            603,
+            604,
+            701,
+            702,
+            703,
+            704,
+            705,
+            706,
+            707,
+            708,
+            709,
+            710,
+            711,
+            712,
+            713,
+            714,
+            801,
+            802,
+            803,
+            804,
+            805,
+            806,
+            807,
+            808,
+            809,
+            810,
+            811,
+            812,
+            813,
+            814,
+            901,
+            902,
+            903,
+            904,
+            905,
+            906,
+            907,
+            908,
+            909,
+            910,
+            1001,
+            1002,
+            1003,
+            1004,
+            1005,
+            1006,
+            1007,
+            1008,
+            1101,
+            1102,
+            1103,
+            1104,
+            1105,
+            1106,
+            1107,
+            1108,
+            1109,
+            1201,
+            1202,
+            1203,
+            1204,
+            1205,
+            1206,
+            1207,
+            1208,
+            1209,
+            1210,
+            1211,
+            1212,
+            1213,
+            1214,
+            1301,
+            1302,
+            1401,
+            1402,
+            1403,
+            1404,
+            1501,
+            1502,
+            1503,
+            1504,
+            1505,
+            1506,
+            1507,
+            1508,
+            1509,
+            1510,
+            1511,
+            1512,
+            1513,
+            1514,
+            1515,
+            1516,
+            1517,
+            1518,
+            1520,
+            1521,
+            1522,
+            506
+          ]
+        },
+        "subject": "time",
+        "key": true,
+        "id": "Year"
+      },
+      {
+        "dataType": "code",
+        "title": {
+          "EN": "Unit"
+        },
+        "values": {
+          "codes": [
+            {
+              "codes": [
+                {
+                  "code": "TN",
+                  "label": {
+                    "EN": "Tonnes"
+                  }
+                },
+                {
+                  "code": "AED",
+                  "label": {
+                    "EN": "United Arab Emirates dirham"
+                  }
+                }
+              ],
+              "idCodeList": "UAE_UM",
+              "extendedName": {
+                "EN": "Unit of measure codelist"
+              }
+            }
+          ]
+        },
+        "domain": {
+          "codes": [
+            {
+              "idCodeList": "UAE_UM",
+              "extendedName": {
+                "EN": "Unit of measure codelist"
+              }
+            }
+          ]
+        },
+        "subject": "um",
+        "key": false,
+        "id": "Unit"
+      },
+      {
+        "dataType": "number",
+        "title": {
+          "EN": "Value"
+        },
+        "subject": "value",
+        "key": false,
+        "id": "Value"
+      }
+    ],
+    "rid": "63_82",
+    "datasource": "CountrySTAT",
+    "contextSystem": "UAE"
+  },
+  "uid": "UAE_TRADE",
+  "contacts": [
+    {
+      "organization": {
+        "EN": "UAE"
+      },
+      "role": "distributor",
+      "contactInfo": {
+        "phone": "000"
+      },
+      "roleLabel": {
+        "EN": "Distributor"
+      }
+    }
+  ],
+  "rid": "9_423",
+  "meContent": {
+    "resourceRepresentationType": "dataset",
+    "resourceRepresentationTypeLabel": {
+      "EN": "Dataset"
+    },
+    "seCoverage": {
+      "coverageSectorsDetails": {
+        "EN": ""
+      },
+      "coverageTime": {
+        "from": 1167606000000,
+        "to": 1325286000000
+      },
+      "coverageGeographic": {
+        "version": "2014",
+        "codes": [
+          {
+            "code": "255",
+            "label": {
+              "PT": "Emirados Árabes Unidos",
+              "FR": "Émirats arabes unis",
+              "AR": "الإمارات العربية المتحدة",
+              "EN": "United Arab Emirates",
+              "RU": "Объединенные Арабские Эмираты",
+              "ES": "Emiratos Árabes Unidos",
+              "ZH": "阿拉伯联合酋长国"
+            }
+          }
+        ],
+        "idCodeList": "GAUL0",
+        "extendedName": {
+          "EN": "Global administrative unit layer country level"
+        }
+      },
+      "coverageSectors": {
+        "codes": [
+          {
+            "code": "331",
+            "label": {
+              "EN": "TRADE POLICY AND REGULATIONS AND TRADE-RELATED ADJUSTMENT"
+            }
+          },
+          {
+            "code": "311",
+            "label": {
+              "EN": "AGRICULTURE"
+            }
+          }
+        ],
+        "idCodeList": "CRS_purpose_codes",
+        "extendedName": {
+          "EN": "Purpose Codes: sector classification"
+        }
+      }
+    }
+  },
+  "languageDetails": {
+    "EN": ""
+  },
+  "characterSet": {
+    "codes": [
+      {
+        "code": "106",
+        "label": {
+          "EN": "UTF-8"
+        }
+      }
+    ],
+    "idCodeList": "IANAcharacterSet",
+    "extendedName": {
+      "EN": "Internet Assigned Numbers Authority codelist"
+    }
+  },
+  "metadataStandardName": "FENIX",
+  "metadataStandardVersion": "1.0",
+  "metadataLanguage": {
+    "version": "1998",
+    "codes": [
+      {
+        "code": "eng",
+        "label": {
+          "EN": "English"
+        }
+      }
+    ],
+    "idCodeList": "ISO639-2",
+    "extendedName": {
+      "EN": "International Standard Organization - Language"
+    }
+  },
+  "language": {
+    "version": "1998",
+    "codes": [
+      {
+        "code": "eng",
+        "label": {
+          "EN": "English"
+        }
+      }
+    ],
+    "idCodeList": "ISO639-2",
+    "extendedName": {
+      "EN": "International Standard Organization - Language"
+    }
+  }
+}
+
