@@ -1,6 +1,6 @@
 define(['jquery', 'amplify'], function ($) {
 
-    'use strict'
+    'use strict';
 
     var leftKeyColumns,              // DSD columns that represent the left key columns
         leftKeyIndexes,              // Index of the left key columns on the DSD
@@ -27,33 +27,20 @@ define(['jquery', 'amplify'], function ($) {
         dsdConf = dsd;
         compConfiguration = configurations.componentConfig;
 
-       /*
-        var storage = amplify.store();
-        if (storage.isMonthlyModality) {
-            dsdConf.dsd.columns[INDEX_DATES].dataTypes[0] = "date"
-            dsdConf.dsd.columns[INDEX_DATES].domain.period.from = '20000101'
-            dsdConf.dsd.columns[INDEX_DATES].domain.period.to = '20180601';
-        } else {
-            dsdConf.dsd.columns[INDEX_DATES].dataTypes[0] = "season"
-            dsdConf.dsd.columns[INDEX_DATES].domain.period.from = '2000/01'
-            dsdConf.dsd.columns[INDEX_DATES].domain.period.to = '2017/18';
-        }
-        */
-
-
         this.createKeyMatrixes();
     }
 
 
     Configurator.prototype.createKeyMatrixes = function () {
+
         lefKeyColumnConfiguration = [];
         leftKeyColumns = []
         leftKeyIndexes = []
         upKeyColumnConfiguration = [];
         upKeyColumns = []
         upKeyIndexes = [],
-        accessorMap = {},
-        accessorColumns = [];
+            accessorMap = {},
+            accessorColumns = [];
         accessorIndexes = [];
         mapCodesLabel = [];
         mapCodesIndexes = {};
@@ -63,10 +50,12 @@ define(['jquery', 'amplify'], function ($) {
 
 
         for (var i = 0; i < dsdConf.dsd.columns.length; i++) {
+            // if is a key column
             if (dsdConf.dsd.columns[i].domain.key) {
                 var found = false;
                 for (var k = 0; k < configuration.gridConfiguration.columnsKey.left.length && !found; k++) {
-                    if (configuration.gridConfiguration.columnsKey.left[k].columnId ==i ){
+                    // the configuration has got a a field columnId that should respond to the dsd conf(OK!!)
+                    if (configuration.gridConfiguration.columnsKey.left[k].columnId == i) {
                         lefKeyColumnConfiguration.push(configuration.gridConfiguration.columnsKey.left.splice(k, 1)[0])
                         leftKeyColumns.push(dsdConf.dsd.columns[i])
                         leftKeyIndexes.push(i);
@@ -75,8 +64,7 @@ define(['jquery', 'amplify'], function ($) {
                 }
 
                 for (var k = 0; k < configuration.gridConfiguration.columnsKey.up.length && !found; k++) {
-                    if (configuration.gridConfiguration.columnsKey.up[k].columnId ==
-                        dsdConf.dsd.columns[i].domain.id) {
+                    if (configuration.gridConfiguration.columnsKey.up[k].columnId == i) {
                         upKeyColumnConfiguration.push(configuration.gridConfiguration.columnsKey.up.splice(k, 1)[0])
                         upKeyColumns.push(dsdConf.dsd.columns[i])
                         upKeyIndexes.push(i);
@@ -93,25 +81,6 @@ define(['jquery', 'amplify'], function ($) {
                 accessorIndexes.push(i);
             }
         }
-
-
-        console.log("appena create!!!")
-
-        console.log("left")
-
-        console.log(leftKeyColumns)
-        console.log(leftKeyIndexes)
-
-
-        console.log("---------------------------------------------------")
-        console.log("up")
-
-
-        console.log(upKeyColumns)
-        console.log(upKeyIndexes)
-        console.log("---------------------------------------------------")
-
-
 
     }
 

@@ -128,11 +128,13 @@ define([
                 }
             }
         }
-        //  result[indexValues]  =formatter.fromDSDToVisualizationFormat(result[indexValues],valueColumn,configurator.getValueColumnOnDSD().dataTypes, configurator)
-
+         result[indexValues]  =formatter.fromDSDToVisualizationFormat(result[indexValues],valueColumn,configurator.getValueColumnOnDSD().dataTypes, configurator)
+/*
+        // amis binded
         result[indexValues]  = (result[0] && particularFormatterCodes[result[0]])? formatter.convertParticularValues(result[indexValues],valueColumn,configurator.getValueColumnOnDSD().dataTypes, configurator):
             formatter.fromDSDToVisualizationFormat(result[indexValues],valueColumn,configurator.getValueColumnOnDSD().dataTypes, configurator);
 
+*/
 
         var label = configurator.getValueLabel()
         result[indexValues] = this.expressionLanguage(label, indexValues, result);
